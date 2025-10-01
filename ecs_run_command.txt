@@ -1,0 +1,6 @@
+aws ecs run-task \
+  --cluster kalshi-cluster \
+  --launch-type FARGATE \
+  --task-definition kalshi-pipeline:1 \
+  --network-configuration "awsvpcConfiguration={subnets=[subnet-0f446e0e7f6e00fb3],securityGroups=[sg-03fc9624c5689c679],assignPublicIp=ENABLED}" \
+  --region ap-southeast-2

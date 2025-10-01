@@ -1,0 +1,35 @@
+[
+  {
+    "Rules": [
+      {
+        "Resource": [
+          "collection/kalshi-markets-vector"
+        ],
+        "Permission": [
+          "aoss:CreateCollectionItems",
+          "aoss:DeleteCollectionItems",
+          "aoss:UpdateCollectionItems",
+          "aoss:DescribeCollectionItems"
+        ],
+        "ResourceType": "collection"
+      },
+      {
+        "Resource": [
+          "index/kalshi-markets-vector/*"
+        ],
+        "Permission": [
+          "aoss:ReadDocument",
+          "aoss:WriteDocument",
+          "aoss:CreateIndex",
+          "aoss:UpdateIndex",
+          "aoss:DeleteIndex",
+          "aoss:DescribeIndex"
+        ],
+        "ResourceType": "index"
+      }
+    ],
+    "Principal": [
+      "arn:aws:iam::647664611140:role/Bronze_Gold_VectorDB-role-ij5tlqyy"
+    ]
+  }
+]

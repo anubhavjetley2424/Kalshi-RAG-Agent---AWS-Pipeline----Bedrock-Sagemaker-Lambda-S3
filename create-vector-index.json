@@ -1,0 +1,33 @@
+{
+  "settings": {
+    "index.knn": true
+  },
+  "mappings": {
+    "properties": {
+      "text": {
+        "type": "text"
+      },
+      "embedding": {
+        "type": "knn_vector",
+        "dimension": 1536,
+        "method": {
+          "name": "hnsw",
+          "space_type": "l2",
+          "engine": "nmslib"
+        }
+      },
+      "topic": {
+        "type": "keyword"
+      },
+      "source": {
+        "type": "keyword"
+      },
+      "date": {
+        "type": "date"
+      },
+      "url": {
+        "type": "keyword"
+      }
+    }
+  }
+}

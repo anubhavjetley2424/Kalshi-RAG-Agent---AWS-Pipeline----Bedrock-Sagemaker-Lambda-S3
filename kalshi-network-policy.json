@@ -1,0 +1,13 @@
+[
+  {
+    "Rules": [
+      {
+        "ResourceType": "collection",
+        "Resource": ["collection/kalshi-markets-vector"]
+      }
+    ],
+    "AllowFromPublic": true,
+    "SourceVPCEs": [],
+    "SourceServices": []
+  }
+]
