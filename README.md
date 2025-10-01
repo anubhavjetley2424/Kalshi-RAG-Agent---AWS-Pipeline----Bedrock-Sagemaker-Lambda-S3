@@ -35,30 +35,33 @@ graph TB
         Q --> L
     end
 ```
-🛠️ Services Used
-Service	Purpose	Configuration
-AWS Lambda	Data processing & embedding gen.	Python 3.10, 512MB RAM, 15min timeout
-Amazon Bedrock	LLM inference & embeddings	Titan Text V2, Claude 3 Sonnet
-Amazon SageMaker	Interactive analysis	Jupyter notebooks with ml.t3.medium
-Amazon S3	Data lake storage	Bronze / Silver / Gold buckets
-Amazon RDS	Vector database	Aurora PostgreSQL + pgvector
-Secrets Manager	DB credentials	Auto-rotation enabled
+
+## 🛠️ Services Used
+
+| Service              | Purpose                          | Configuration                          |
+|----------------------|----------------------------------|----------------------------------------|
+| **AWS Lambda**       | Data processing & embedding gen. | Python 3.10, 512MB RAM, 15min timeout  |
+| **Amazon Bedrock**   | LLM inference & embeddings       | Titan Text V2, Claude 3 Sonnet         |
+| **Amazon SageMaker** | Interactive analysis             | Jupyter notebooks with `ml.t3.medium`  |
+| **Amazon S3**        | Data lake storage                | Bronze / Silver / Gold buckets         |
+| **Amazon RDS**       | Vector database                  | Aurora PostgreSQL + `pgvector`         |
+| **Secrets Manager**  | DB credentials                   | Auto-rotation enabled                  |
 
 🔄 RAG Technique Used
 
-Vector Similarity Search RAG
+- Vector Similarity Search RAG
 
-Embedding Model: Amazon Titan Text Embeddings V2 (1024 dimensions)
+- Embedding Model: Amazon Titan Text Embeddings V2 (1024 dimensions)
 
-Vector Database: PostgreSQL with pgvector
+- Vector Database: PostgreSQL with pgvector
 
-Similarity Metric: Cosine distance (<=> operator)
+- Similarity Metric: Cosine distance (<=> operator)
 
-Retrieval Method: K-NN search (top-30 similar documents)
+- Retrieval Method: K-NN search (top-30 similar documents)
 
-Generation Model: Claude 3 Sonnet (via Bedrock)
+- Generation Model: Claude 3 Sonnet (via Bedrock)
 
-Context Assembly: Hybrid — structured market data + unstructured sentiment
+- Context Assembly: Hybrid — structured market data + unstructured sentiment
 
 📋 Project Setup Steps
 1. Infrastructure Setup
@@ -221,6 +224,9 @@ Scalable Architecture — serverless design handles variable workloads
 
 Tech Stack: Python, AWS (Lambda, Bedrock, SageMaker, S3, RDS), PostgreSQL + pgvector, Selenium, Claude 3, Titan Embeddings
 
-⚠️ Disclaimer
+Result:
+ <img width="2552" height="1104" alt="image" src="https://github.com/user-attachments/assets/e36b0c34-7d29-40a5-8537-d1d0235a2e25" />
 
-This project interacts with prediction markets and uses social data; ensure you follow legal/regulatory requirements and Kalshi's terms of service. Use financial/trading recommendations responsibly — this repository is for educational / research purposes and not financial advice.
+Next Steps:
+- Servicing the agent and building a web app around it (Dash, Flask) using <b>Fast API</b> or <b> Lambda + API Gateway (Serverless) </b> or <b> ECS Fargate </b>
+
